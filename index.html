@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Project </title>
+  
+  <style>
+    
+	/* Panel */
+    #panel {
+	  width: 1260px;
+	  height: 150px;
+	}
+	#tabs {
+	  position: absolute;
+	  width: 450px;
+	  height:20px;
+	  top: 134px;
+	  left: 360px;
+	}
+	#mpButtons {
+	  position: absolute;	  
+	}
+	#mpRls {
+	  position: absolute;
+	}
+	  #mpRls > button {
+	    background-color: grey;
+	  }
+	
+	/* Schema */
+	#schema {
+	  width: 910px;
+	  height: 505px;
+	  margin-left: 350px;
+	}
+	#log {
+	  position: absolute; 
+	  top: 180px; 
+	  left: 1100px; 
+	  z-index: 12; 
+	  width: 150px; 
+	  height: 450px;
+	  overflow-y: auto;
+	  padding-left: 15px;
+	}
+	.tab {
+	  position: absolute;
+	  z-index: 10;
+	  width: 910px;
+	  height: 505px;
+	  background-repeat: no-repeat;
+	  background-color: white;
+	}
+	
+	/* Shaft */
+	#shaftContainer {
+	  position: absolute;
+      width: 350px;
+      height: 505px;
+      overflow-y: scroll;	  
+	}
+	#shaft {
+	  height: 650px;
+	}	
+	#cab {
+	  position: absolute;
+	  background-color: lightgreen;
+	  width: 100px;
+	  height:100px;
+	  top: 50px;
+	  left: 120px;
+	  overflow-x: hidden;
+	}
+	#leftDoor {
+	  position: absolute;
+	  background-color: gray;
+	  width: 50px;
+	  height: 100px;
+	  left: 0px;
+	  top: 0px;
+	}
+	#rightDoor {
+	  position: absolute;
+	  background-color: gray;
+	  width: 50px;
+	  height: 100px;
+	  left: 50px;
+	  top: 0px;
+	}
+	#cabButtons {
+	  position: absolute;
+	  top: 10px;
+	  left: 230px;
+	  width: 50px;
+	}
+	#shaftButtons {
+	  position: absolute;
+	  top: 0px;
+	  left: 50px;
+	  width: 50px;
+	}
+  </style>
+  
+</head>
+
+
+<body>
+
+  <div id='panel'>
+    <div id='mpButtons'>
+	  <button id='mpVU' style="position: absolute; top: 10px; left: 10px"> ВУ </button>
+	  <button id='mpS'  style="position: absolute; top: 50px; left: 10px"> Стоп </button>
+	  <button id='mpW' style="position: absolute; top: 50px; left: 90px">Норм.р</button>
+	  <button id='mpUp' style="position: absolute; top: 80px; left: 90px"> вверх </button>
+	  <button id='mpDown' style="position: absolute; top: 110px; left: 90px"> вниз </button>
+	  <button id='ck'style="position: absolute; top: 50px; left: 180px">кбр_вкл</button>
+      <button id='cUp' style="position: absolute; top: 80px; left: 180px">вверх</button>
+	  <button id='cDown' style="position: absolute; top: 110px; left: 180px">вниз</button>
+	</div>  
+
+	<div id='mpRls'>
+	  <button id='mp_kb'   style="position: absolute; top: 10px; left: 344px; width: 48px;">кб</button>
+	  <button id='mp_km'   style="position: absolute; top: 10px; left: 394px; width: 48px;">км</button>
+	  <button id='mp_emt'  style="position: absolute; top: 10px; left: 444px; width: 48px;">эмт</button>
+	  <button id='mp_rz'   style="position: absolute; top: 10px; left: 494px; width: 48px;">рз</button>
+	  <button id='mp_rbz'  style="position: absolute; top: 10px; left: 544px; width: 48px;">рбз </button>
+	  <button id='mp_rbz1' style="position: absolute; top: 10px; left: 594px; width: 48px;">рбз1</button>
+	  <button id='mp_rto'  style="position: absolute; top: 10px; left: 644px; width: 48px;">рто</button>
+	  <button id='mp_rito' style="position: absolute; top: 10px; left: 694px; width: 48px;">рито</button>
+	  
+	  <button id='mp_rod'  style="position: absolute; top: 10px; left: 794px;  width: 48px;">род</button>
+	  <button id='mp_rzd'  style="position: absolute; top: 10px; left: 844px;  width: 48px;">рзд</button>
+	  <button id='mp_rv2'  style="position: absolute; top: 10px; left: 894px;  width: 48px;">рв2</button>
+	  <button id='mp_rkd'  style="position: absolute; top: 10px; left: 944px;  width: 48px;">ркд</button>
+	  <button id='mp_rkd1' style="position: absolute; top: 10px; left: 994px;  width: 48px;">ркд1</button>
+	  <button id='mp_rpk'  style="position: absolute; top: 10px; left: 1044px; width: 48px;">рпк</button>
+	  <button id='mp_rnr'  style="position: absolute; top: 10px; left: 1094px; width: 48px;">рнр</button>
+	  <button id='mp_rpo'  style="position: absolute; top: 10px; left: 1144px; width: 48px;">рпо</button>
+	  <button id='mp_rbg'  style="position: absolute; top: 10px; left: 1194px">рбг110</button>
+	  
+	  <button id='mp_kv'  style="position: absolute; top: 50px; left: 344px; width: 48px;">кв</button>
+	  <button id='mp_kn'  style="position: absolute; top: 50px; left: 394px; width: 48px;">кн</button>
+	  <button id='mp_rbb'  style="position: absolute; top: 50px; left: 444px; width: 48px;">рб</button>
+	  <button id='mp_ruv' style="position: absolute; top: 50px; left: 494px; width: 48px;">рув</button>
+	  <button id='mp_run' style="position: absolute; top: 50px; left: 544px; width: 48px;">рун</button>
+	  <button id='mp_rnn'  style="position: absolute; top: 50px; left: 594px; width: 48px;">рн</button>
+	  <button id='mp_rn1' style="position: absolute; top: 50px; left: 644px; width: 48px;">рн1</button>
+	  
+	  
+	  <button id='mp_rrv20' style="position: absolute; top: 50px; left: 794px;  width: 48px;">20ррв</button>
+	  <button id='mp_rrv19' style="position: absolute; top: 50px; left: 844px;  width: 48px;">19ррв</button>
+	  <button id='mp_rrv9'  style="position: absolute; top: 50px; left: 894px;  width: 48px;">9ррв</button>
+	  <button id='mp_rrv2'  style="position: absolute; top: 50px; left: 944px;  width: 48px;">2ррв</button>
+	  <button id='mp_rrv1'  style="position: absolute; top: 50px; left: 994px;  width: 48px;">1ррв</button>
+	  <button id='mp_rpv1'  style="position: absolute; top: 50px; left: 1094px; width: 48px;">рпв1</button>
+	  <button id='mp_rpv2'  style="position: absolute; top: 50px; left: 1144px; width: 48px;">рпв2</button>
+	  <button id='mp_rpv3'  style="position: absolute; top: 50px; left: 1194px; width: 48px;">рпв3</button>
+	  
+	  <button id='mp_ris20' style="position: absolute; top: 90px; left: 344px; width: 48px;">20рис</button>
+	  <button id='mp_ris19' style="position: absolute; top: 90px; left: 394px; width: 48px;">19рис</button>
+	  <button id='mp_ris9'  style="position: absolute; top: 90px; left: 444px; width: 48px;">9рис</button>
+	  <button id='mp_ris2'  style="position: absolute; top: 90px; left: 494px; width: 48px;">2рис</button>
+	  <button id='mp_ris1'  style="position: absolute; top: 90px; left: 544px; width: 48px;">1рис</button>
+	  
+	  <button id='mp_rrp20' style="position: absolute; top: 90px; left: 794px; width: 48px;">20ррп</button>
+	  <button id='mp_rrp19' style="position: absolute; top: 90px; left: 844px; width: 48px;">19ррп</button>
+	  <button id='mp_rrp9'  style="position: absolute; top: 90px; left: 894px; width: 48px;">9ррп</button>
+	  <button id='mp_rrp2'  style="position: absolute; top: 90px; left: 944px; width: 48px;">2ррп</button>
+	  <button id='mp_rrp1'  style="position: absolute; top: 90px; left: 994px; width: 48px;">1ррп</button>
+	</div>    
+	
+	<div id = 'tabs'> 
+	  <table>
+	    <tr><td><a id="t0" href="#220">стр220_</a></td>
+		    <td><a id="t1" href="#221">стр221_</a></td>
+			<td><a id="t2" href="#222">стр222_</a></td>
+			<td><a id="t3" href="#223">стр223_</a></td>
+			<td><a id="t4" href="#224">стр224_</a></td>
+			<td><a id="t5" href="#225">стр225_</a></td>
+			<td><a id="t6" href="#226">стр226_</a></td>
+		</tr>
+	  </table>
+	</div>
+  </div>
+  
+  <div id='shaftContainer'>
+  	<div id='shaft'> 
+	  <div id='cab'>
+        <div id='leftDoor'></div>
+        <div id='rightDoor'></div>		
+	  </div>
+	  <div id='cabButtons'>
+		<button id='cr'> реверс </button>
+	    <button id='cb20'> 20 </button>
+		<button id='cb19'> 19 </button>
+		<button id='cb9'> 9 </button>
+		<button id='cb2'> 2 </button>
+		<button id='cb1'> 1 </button>
+		<button id='cs'> стоп </button>
+		<button id='cp'>подп.выкл</button>
+	  </div>
+	  <div id='shaftButtons'> 
+	    <button id='sb20' style="position: absolute; top: 50px"> 20 </button> 
+		<button id='sb19' style="position: absolute; top: 170px"> 19 </button>
+		<button id='sb9'  style="position: absolute; top: 290px"> 9 </button>
+		<button id='sb2'  style="position: absolute; top: 410px"> 2 </button>
+		<button id='sb1'  style="position: absolute; top: 530px"> 1 </button>
+	  </div>
+	</div>
+  </div>
+  
+  <div id='schema'>
+    <div id='220' class="tab" style='background-image: url("public/220.png")'></div>
+    <div id='221' class="tab" style='background-image: url("public/221.png")'></div>
+    <div id='222' class="tab" style='background-image: url("public/222.png")'></div>
+    <div id='223' class="tab" style='background-image: url("public/223.png")'></div>
+    <div id='224' class="tab" style='background-image: url("public/224.png")'></div>
+    <div id='225' class="tab" style='background-image: url("public/225.png")'></div>
+    <div id='226' class="tab" style='background-image: url("public/226.png")'></div>
+	<div id='log'></div>
+  </div>
+  
+  <script src="public/underscore.js"></script>
+  <script src="public/jquery.js"></script>
+  <script src="public/jquery.lazyload.js"></script>
+  <script src="public/json2.js"></script>
+  <script src="public/backbone.js"></script>
+  <script src="data.js"></script>  
+  <script src="router.js"></script>
+  <script src="transceiver.js"></script>
+  <script src="cab.js"></script>
+  <script src="door.js"></script>
+  <script src="elements.js"></script>
+  <script src="display.js"></script>
+  <script src="start.js"> </script>
+  <script>
+           $('#220').click(function(e) { console.log((e.pageX - 360) + ' ' + (e.pageY - 160)); }); 
+           $('#221').click(function(e) { console.log((e.pageX - 360) + ' ' + (e.pageY - 160)); }); 
+           $('#222').click(function(e) { console.log((e.pageX - 360) + ' ' + (e.pageY - 160)); }); 
+           $('#223').click(function(e) { console.log((e.pageX - 360) + ' ' + (e.pageY - 160)); }); 
+           $('#224').click(function(e) { console.log((e.pageX - 360) + ' ' + (e.pageY - 160)); });  
+           $('#225').click(function(e) { console.log((e.pageX - 360) + ' ' + (e.pageY - 160)); });  
+           $('#226').click(function(e) { console.log((e.pageX - 360) + ' ' + (e.pageY - 160)); });    
+  </script>
+
+  
+</body>
+
+</html>
