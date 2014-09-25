@@ -131,7 +131,12 @@
 	  if (_.isEqual(el.name, 'door') && this.door){ this.takeDoor(el.left, el.right); return; }
 	  if (_.isEqual(el.name, this.rele)){ this.takeRele(el.state); return; }
 	  if (_.isEqual(el.name, this.shunt)){ this.takeShunt(el.state); return; }
-	  
+	  /////////
+	  if (_.contains(el.electric, this.name)) {
+	    var sib = _.where(root.elements, {name: el.name})[0];
+	    if (sib.electricComb[_.indexOf(sib.electric, this.name)]) return;
+	  }
+	  ////////////
 	  this.electricComb[_.indexOf(this.electric, el.name)] = el.state;
 	  
 	  this.checkState();
@@ -172,11 +177,13 @@
 	      this.mechanicComb[1] = 1; // enable intervals
 		  if (this.dsh) {
 		    this.mechanicComb[0] = 1;
+			this.mechanicComb[2] = 1;
 		  }
 	    } else {
 	      this.mechanicComb[1] = 0;
 		  if (this.dsh) {
 		    this.mechanicComb[0] = 0;
+			this.mechanicComb[2] = 0;
 		  }
 	    }
 	  }
@@ -208,13 +215,13 @@
 	send: function() {
 	
 	  if (_.isEqual(this.type, 'z') || _.isEqual(this.type, 'r')) {
-	    this.trigger(this.name, {name: this.name, state: this.state});
+	    this.trigger(this.name, {name: this.name, state: this.state, electric: this.electric});
 	  } else if (this.state || _.isEqual(this.type, 'rl')) {
-		_.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state}); }, 50, this);
+		_.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state, electric: el.electric}); }, 50, this);
 	  } else if (_.isEqual(this.type, 'rv3')) {
-	    _.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state}); }, 300, this);
+	    _.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state, electric: el.electric}); }, 300, this);
 	  } else if (_.isEqual(this.type, 'rv35')) {
-	    _.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state}); }, 3500, this);
+	    _.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state, electric: el.electric}); }, 3500, this);
 	  }
 	  
 	}

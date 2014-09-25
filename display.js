@@ -85,10 +85,10 @@
 	  "click #ck": "toogleRevizion",
 	  "click #mpUp": "mUp",
 	  "click #mpDown": "mDown",
-	  "mouseDown #cUp": "begRevUp",
-	  "mouseUp #cUp": "endRevUp",
-      "mouseDown #cDown": "begRevDown",
-	  "mouseDown #cDown": "endRevDown",
+	  "mousedown #cUp": "begRevUp",
+	  "mouseup #cUp": "endRevUp",
+      "mousedown #cDown": "begRevDown",
+	  "mouseup #cDown": "endRevDown",
 	  "click #mpS": "stop"
 	},
 	
@@ -108,15 +108,27 @@
 	toogleWork: function() {
 	  if (!this.$work) this.$work = Backbone.$('#mpW');
 	  this.$work.text(this.$work.text() == 'Норм.р' ? 'Маш.пом' : 'Норм.р');
+	  this.mpW = this.mpW == 'mp' ? 'nr' : 'mp';
+	  if (this.mpW == 'mp') {
+	    transceiver.trans('mpW', {'name': 'mpW', state: 1});
+	  } else {
+	    transceiver.trans('mpW', {'name': 'mpW', state: 0});
+	  }
 	},
 	
 	toogleRevizion: function() {
 	  if (!this.$ck) this.$ck = Backbone.$('#ck');
 	  this.$ck.text(this.$ck.text() == 'кбр_вкл' ? 'кбр_выкл' : 'кбр_вкл');
+	  this.kbrW = this.kbrW == 'out' ? 'in' : 'out';
+	  if (this.kbrW == 'out') {
+	    transceiver.trans('kbrW', {'name': 'kbrW', state: 1});
+	  } else {
+	    transceiver.trans('kbrW', {'name': 'kbrW', state: 0});
+	  }
 	},
 	
 	mUp: function() {
-	  var elem = _.where(elements, {name: 'mknvz'})[0];
+	  var elem = _.where(elements, {name: 'mknvz1'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 1;
 	    elem.checkState();
@@ -128,7 +140,7 @@
 	},
 	
 	mDown: function() {
-	  var elem = _.where(elements, {name: 'mknnz'})[0];
+	  var elem = _.where(elements, {name: 'mknnz1'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 1;
 	    elem.checkState();
@@ -140,7 +152,7 @@
 	},
 	
 	begRevUp: function() {
-	  var elem = _.where(elements, {name: 'kknvz'})[0];
+	  var elem = _.where(elements, {name: 'kknvz1'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 1;
 		elem.checkState();
@@ -148,7 +160,7 @@
 	},
 	
 	endRevUp: function() {
-	  var elem = _.where(elements, {name: 'kknvz'})[0];
+	  var elem = _.where(elements, {name: 'kknvz1'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 0;
 		elem.checkState();
@@ -156,7 +168,7 @@
 	},
 	
 	begRevDown: function() {
-	  var elem = _.where(elements, {name: 'kknnz'})[0];
+	  var elem = _.where(elements, {name: 'kknnz1'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 1;
 		elem.checkState();
@@ -164,7 +176,7 @@
 	},
 	
 	endRevDown: function() {
-	  var elem = _.where(elements, {name: 'kknnz'})[0];
+	  var elem = _.where(elements, {name: 'kknnz1'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 0;
 		elem.checkState();
@@ -172,12 +184,12 @@
 	},
 	
 	stop: function() {
-	  var elem = _.where(elements, {name: 'mknsz'})[0];
+	  var elem = _.where(elements, {name: 'mknstop'})[0];  // refactor to message from transceiver
 	  if (elem) {
-	    elem.mechanicComb[2] = 1;
+	    elem.mechanicComb[2] = 0;
 	    elem.checkState();
 	    _.delay(function() {
-          elem.mechanicComb[2] = 0;
+          elem.mechanicComb[2] = 1;
 		  elem.checkState();
 	    }, 500);
 	  }
@@ -216,7 +228,7 @@
 	},
 	
 	reverse: function() {
-	  var elem = _.where(elements, {name: 'reversz'})[0]; // watch name
+	  var elem = _.where(elements, {name: 'vbrz1'})[0]; // watch name
 	  if (elem) {
 	    elem.mechanicComb[2] = 1;
 	    elem.checkState();
@@ -230,10 +242,10 @@
 	stop: function() {
 	  var elem = _.where(elements, {name: 'kknstop'})[0]; // watch name
 	  if (elem) {
-	    elem.mechanicComb[2] = 1;
+	    elem.mechanicComb[2] = 0;
 	    elem.checkState();
 	    _.delay(function() {
-          elem.mechanicComb[2] = 0;
+          elem.mechanicComb[2] = 1;
 		  elem.checkState();
 	    }, 300);
 	  }
@@ -241,11 +253,17 @@
 	
 	floor: function() {
 	  if (!this.$cp) this.$cp = Backbone.$('#cp');
-	  this.$cp.text(this.$cp.text() == 'подп.выкл' ? 'подп.вкл' : 'подп.выкл');
+	  this.$cp.text(this.$cp.text() == 'зайти' ? 'выйти' : 'зайти');
+	  this.vbpW = this.vbpW == 'in' ? 'out' : 'in';
+	  if (this.vbpW == 'in') {
+	    transceiver.trans('vbpW', {'name': 'vbpW', state: 1});
+	  } else {
+	    transceiver.trans('vbpW', {'name': 'vbpW', state: 0});
+	  }
 	},
 	
 	signaling: function(id) {
-	  var elem = _.where(elements, {name: 'kknprikaz' + Array.prototype.slice.call(id, 2).join('') + 'z'})[0];
+	  var elem = _.where(elements, {name: 'knp' + Array.prototype.slice.call(id, 2).join('') + 'z1'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 1;
 	    elem.checkState();
@@ -267,7 +285,7 @@
 	
 	press: function(ev) {
 	  var id = ev.currentTarget.id;
-	  var elem = _.where(elements, {name: 'kknvizov' + Array.prototype.slice.call(id, 2).join('') + 'z'})[0];
+	  var elem = _.where(elements, {name: 'kncb' + Array.prototype.slice.call(id, 2).join('') + 'z'})[0];
 	  if (elem) {
 	    elem.mechanicComb[2] = 1;
 	    elem.checkState();
