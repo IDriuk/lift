@@ -68,6 +68,11 @@
 		cab.$top.css('top', t);
 		cab.$buttons.css('top', t - 40);
 		cab.send();
+		////////////////
+		if ( t <= 30 || t >= 550) {
+		  this.transceiver.trigger('overpath', {name: 'overpath', state: 1});
+		}
+		///////////////
 	    _.delay(cab.move, 50, comb, cab);
 	  },
 	  
