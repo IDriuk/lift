@@ -61,7 +61,7 @@
 	    {name: 'rv2z1', type: 'z', electric: ['rpkr2'], mechanic: [[], [], 'rv2', ''], left: 157, top: 468, tab: 220},
 	    {name: 'vr26r', type: 'r', electric: ['kbz3', 'rv2z1'], mechanic: [[], [], 'mpW', ''], left: 202, top: 467, tab: 220},
 	    {name: 'rn1z1', type: 'z', electric: ['vr26r'], mechanic: [[], [], 'rn1', ''], left: 246, top: 469, tab: 220},
-	    {name: 'rv2', type: 'rv35', electric: ['rpkr3', 'rpoz3', 'rodz3', 'rtoz4'], mechanic: [[], [], '', ''], left: 604, top: 153, tab: 223}, /* rv2 */
+	    {name: 'rv2', type: 'rv35', electric: ['rzdz3', 'rnnr1', 'rodz3', 'rtoz4'], mechanic: [[], [], '', ''], left: 604, top: 153, tab: 223}, /* rv2 */
 	    {name: 'rn1', type: 'rl', electric: ['rbgz1'], mechanic: [[], [], '', ''], left: 590, top: 456, tab: 222}, /* rn1 */
 		
 	    {name: 'knp20z1', type: 'z', electric: ['rn1z1'], mechanic: [[], [], '', ''], left: 80, top: 52, tab: 221},
@@ -142,7 +142,7 @@
 	    {name: 'rnrz1', type: 'z', electric: ['kknnr1'], mechanic: [[], [], 'rnr', ''], left: 141, top: 320, tab: 222},
 	    {name: 'rtoz2', type: 'z', electric: ['rnrz1'], mechanic: [[], [], 'rto', ''], left: 89, top: 371, tab: 222},
 	    {name: 'rtoz3', type: 'z', electric: ['rtoz2'], mechanic: [[], [], 'rto', ''], left: 89, top: 407, tab: 222},
-		{name: 'kbr1', type: 'r', electric: ['rtoz3', 'knz3', 'kvz3'], mechanic: [[], [], 'kb', ''], left: 391, top: 434, tab: 222},
+		{name: 'kbr1', type: 'r', electric: ['rtoz3', 'knz3', 'kvz3', 'ruvz2', 'runz2'], mechanic: [[], [], 'kb', ''], left: 391, top: 434, tab: 222},
 		
 		/* цепочки КВ и КН */
 		{name: 'vr25z', type: 'z', electric: ['rkdz1'], mechanic: [[], [], 'mpW', ''], left: 118, top: 263, tab: 222},
@@ -153,10 +153,10 @@
 		{name: 'rbzz1', type: 'z', electric: ['kknvz1'], mechanic: [[], [], 'rbz', ''], left: 494, top: 300, tab: 222},
 		{name: 'ritoz3', type: 'z', electric: ['kknnz1'], mechanic: [[], [], 'rito', ''], left: 314, top: 365, tab: 222},
 		{name: 'ris1z1', type: 'z', electric: ['kknnz1'], mechanic: [[], [], 'ris1', ''], left: 370, top: 365, tab: 222},
-		{name: 'ruvz2', type: 'z', electric: ['rtoz3'], mechanic: [[], [], 'ruv', ''], left: 260, top: 321, tab: 222},
+		{name: 'ruvz2', type: 'z', electric: ['rtoz3', 'ritoz2', 'rbzz1'], mechanic: [[], [], 'ruv', ''], left: 260, top: 321, tab: 222},
 		{name: 'kvz3', type: 'z', electric: ['rtoz3', 'ritoz2', 'rbzz1'], mechanic: [[], [], 'kv', ''], left: 260, top: 343, tab: 222},
-		{name: 'runz2', type: 'z', electric: ['rtoz3'], mechanic: [[], [], 'run', ''], left: 260, top: 366, tab: 222},
-		{name: 'knz3', type: 'z', electric: ['rtoz3', 'ris1z1'], mechanic: [[], [], 'kn', ''], left: 260, top: 389, tab: 222},
+		{name: 'runz2', type: 'z', electric: ['rtoz3', 'ritoz3', 'ris1z1'], mechanic: [[], [], 'run', ''], left: 260, top: 366, tab: 222},
+		{name: 'knz3', type: 'z', electric: ['rtoz3', 'ritoz3', 'ris1z1'], mechanic: [[], [], 'kn', ''], left: 260, top: 389, tab: 222},
 		{name: 'kvr1', type: 'r', electric: ['ritoz3', 'ris1z1', 'runz2', 'knz3'], mechanic: [[], [], 'kv', ''], left: 464, top: 398, tab: 222},
 		{name: 'rbz', type: 'rv3', electric: ['rbz1z1', 'rpoz4'], mechanic: [[], [], '', ''], left: 605, top: 354, tab: 223},
 		{name: 'ris1', type: 'rl', electric: ['dchs1r1'], mechanic: [[], [], '', ''], left: 323, top: 451, tab: 226},
@@ -194,7 +194,7 @@
 		{name: 'vr22z', type: 'z', electric: ['rnrz2'], mechanic: [[], [], 'mpW', ''], left: 183, top: 244, tab: 223},
 		
 		/* цепочка РЗД */
-		{name: 'vkzz1', type: 'r'/* to work */, electric: ['rbgz1'], mechanic: [[], [51, 100], '', ''], left: 180, top: 283, tab: 223},
+		{name: 'vkzz1', type: 'r'/* because 'z' need rele to enable */, electric: ['rbgz1'], mechanic: [[], [51, 100], '', ''], left: 180, top: 283, tab: 223},
 		{name: 'ritoz4', type: 'z', electric: ['vkzz1'], mechanic: [[], [], 'rito', ''], left: 287, top: 267, tab: 223},
 		{name: 'rzr3', type: 'r', electric: ['vkzz1'], mechanic: [[], [], 'rz', ''], left: 300, top: 286, tab: 223},
 		{name: 'rnnz1', type: 'z', electric: ['vkzz1'], mechanic: [[], [], 'rnn', ''], left: 289, top: 304, tab: 223},
@@ -258,7 +258,7 @@
 		
 		/* цепочка РЗ */
 		{name: 'vbrz1', type: 'z', electric: ['vr21r'], mechanic: [[], [], '', ''], left: 123, top: 195, tab: 224},
-		{name: 'kbr2', type: 'r', electric: ['vbrz1', 'rodz4', 'rv2z2', 'rnnr2', 'kmz4'], mechanic: [[], [], 'kb', ''], left: 233, top: 204, tab: 224},
+		{name: 'kbr2', type: 'r', electric: ['vbrz1', 'rodz4', 'rnnr2', 'kmz4'], mechanic: [[], [], 'kb', ''], left: 233, top: 204, tab: 224},
 		{name: 'rodz4', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rod', ''], left: 84, top: 216, tab: 224},
 		{name: 'rv2z2', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rv2', ''], left: 85, top: 243, tab: 224},
 		{name: 'rkdr3', type: 'r', electric: ['rv2z2'], mechanic: [[], [], 'rkd', ''], left: 130, top: 248, tab: 224},
@@ -273,22 +273,22 @@
 		/* цепочка РУВ */
 		{name: 'rrv20z3', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rrv20', ''], left: 85, top: 319, tab: 224},
 		{name: 'rrp20z2', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rrp20', ''], left: 113, top: 335, tab: 224},
-		{name: 'rpv3z1', type: 'z', electric: ['rrv20z3'], mechanic: [[], [], 'rrv20', ''], left: 131, top: 315, tab: 224},
-		{name: 'ris20z2', type: 'z', electric: ['rrp20z2', 'rpv3z1', 'mknvz1', 'ris20z3'], mechanic: [[], [], 'ris20', ''], left: 188, top: 318, tab: 224},
+		{name: 'rpv3z1', type: 'z', electric: ['rrv20z3'], mechanic: [[], [], 'rpv3', ''], left: 131, top: 315, tab: 224},
+		{name: 'ris20z2', type: 'z', electric: ['rrp20z2', 'rpv3z1', 'mknvz1', 'ris20z3', 'rnnz2'], mechanic: [[], [], 'ris20', ''], left: 188, top: 318, tab: 224},
 		{name: 'rpor2', type: 'r', electric: ['ris20z2'], mechanic: [[], [], 'rpo', ''], left: 269, top: 326, tab: 224},
 		{name: 'knr1', type: 'r', electric: ['rpor2'], mechanic: [[], [], 'kn', ''], left: 304, top: 326, tab: 224},
 		{name: 'runr1', type: 'r', electric: ['knr1'], mechanic: [[], [], 'run', ''], left: 364, top: 326, tab: 224},
 		
 		/* --------------------------------------------------------------------------------------------------------- */
 		{name: 'mknvz1', type: 'z', electric: ['vr22z'], mechanic: [[], [], 'mkvW', ''], left: 84, top: 369, tab: 224},
-		{name: 'rnnz2', type: 'z', electric: [], mechanic: [[], [], 'rnn', ''], left: 75, top: 391, tab: 224},
+		{name: 'rnnz2', type: 'z', electric: ['rtoz5'], mechanic: [[], [], 'rnn', ''], left: 75, top: 391, tab: 224},
 		{name: 'ris20z3', type: 'z', electric: ['risesa', 'ris19z2'], mechanic: [[], [], 'ris20', ''], left: 278, top: 389, tab: 224},
-		{name: 'ris20r1', type: 'r', electric: ['mknvz1', 'rnnz2'], mechanic: [[], [], 'ris20', ''], left: 311, top: 379, tab: 224},
+		{name: 'ris20r1', type: 'r', electric: ['mknvz1', 'rnnz2', 'rrp20z2', 'rpv3z1'], mechanic: [[], [], 'ris20', ''], left: 311, top: 379, tab: 224},
 		{name: 'rrv19z3', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rrv19', ''], left: 76, top: 426, tab: 224},
 		{name: 'rpv3z2', type: 'z', electric: ['rrv19z3'], mechanic: [[], [], 'rpv3', ''], left: 133, top: 427, tab: 224},
 		{name: 'rrp19z2', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rrp19', ''], left: 104, top: 450, tab: 224},
 		{name: 'ris19z2', type: 'z', electric: ['rrp19z2', 'rpv3z2', 'ris9z2', 'rises10'/*'ris19z3', 'ris20z3'*/], mechanic: [[], [], 'ris19', ''], left: 278, top: 435, tab: 224},
-		{name: 'ris19r1', type: 'r', electric: ['rrp19z2', 'rpv3z2', 'ris19z2'], mechanic: [[], [], 'ris19', ''], left: 310, top: 458, tab: 224},
+		{name: 'ris19r1', type: 'r', electric: ['rrp19z2', 'rpv3z2'], mechanic: [[], [], 'ris19', ''], left: 310, top: 458, tab: 224},
 		
 		/* --------------------------------------------------------------------------------------------------------- */	
 		{name: 'rtoz5', type: 'z', electric: ['vr22z'], mechanic: [[], [], 'rto', ''], left: 54, top: 132, tab: 225},
@@ -304,7 +304,7 @@
 		{name: 'rpv1z1', type: 'z', electric: ['rrv2z3'], mechanic: [[], [], 'rpv1', ''], left: 173, top: 217, tab: 225},
 		{name: 'rrp2z2', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rrp2', ''], left: 141, top: 240, tab: 225},
 		{name: 'ris2z2', type: 'z', electric: ['rrp2z2', 'rpv1z1', 'rises30'/*'ris2z3', 'ris9z3'*/], mechanic: [[], [], 'ris2', ''], left: 330, top: 229, tab: 225},
-		{name: 'ris2r1', type: 'r', electric: ['rrp2z2', 'rpv1z1', 'ris2z2'], mechanic: [[], [], 'ris2', ''], left: 368, top: 255, tab: 225},
+		{name: 'ris2r1', type: 'r', electric: ['rrp2z2', 'rpv1z1'], mechanic: [[], [], 'ris2', ''], left: 368, top: 255, tab: 225},
 		{name: 'ris2z3', type: 'z', electric: ['rrp2z2', 'rpv1z1', 'ris9z3', 'rises31' /*'ris2z2'*/], mechanic: [[], [], 'ris2', ''], left: 328, top: 263, tab: 225},
 		
 		{name: 'runz4', type: 'z', electric: ['vr23r'], mechanic: [[], [], 'run', ''], left: 131, top: 269, tab: 225},
@@ -321,8 +321,8 @@
 		{name: 'rrp1z2', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rrp1', ''], left: 108, top: 436, tab: 225},
 		{name: 'rpoz5', type: 'z', electric: ['vr21r'], mechanic: [[], [], 'rpo', ''], left: 135, top: 458, tab: 225},
 		{name: 'ris1z4', type: 'z', electric: ['rnnz4', 'mknnz1', 'rrp1z2', 'rpoz5', 'rbzr3', 'rv2r2', 'rkd1z4'], mechanic: [[], [], 'ris1', ''], left: 354, top: 439, tab: 225},
-		{name: 'kvr2', type: 'r', electric: ['ris1z4'], mechanic: [[], [], '', ''], left: 394, top: 450, tab: 225},
-		{name: 'ruvr2', type: 'r', electric: ['kvr2'], mechanic: [[], [], '', ''], left: 432, top: 451, tab: 225}, 
+		{name: 'kvr2', type: 'r', electric: ['ris1z4'], mechanic: [[], [], 'kv', ''], left: 394, top: 450, tab: 225},
+		{name: 'ruvr2', type: 'r', electric: ['kvr2'], mechanic: [[], [], 'ruv', ''], left: 432, top: 451, tab: 225}, 
 		
 		/* датчики */
 		{name: 'dchtor1', type: 'r', electric: ['feed'], mechanic: [[], [], '', ''], intervals:[[48, 52], [168, 172], [288, 292], [408, 412], [528, 532]], left: 200, top: 109, tab: 226},
