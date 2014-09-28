@@ -216,10 +216,14 @@
 	  } else if (_.isEqual(this.type, 'rv3')) {
 	    _.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state}); }, 300, this);
 	  } else if (_.isEqual(this.type, 'rv35')) {
-	    _.delay(function(el){ el.trigger(el.name, {name: el.name, state: el.state}); }, 3500, this);
+	    this.debounceRv35(this);
 	  }
 	  
-	}
+	},
+	
+	debounceRv35: _.debounce(function(el) {
+	    el.trigger(el.name, {name: el.name, state: el.state});
+		}, 3500)
 	
   });
   
