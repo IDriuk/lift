@@ -112,7 +112,7 @@
 		this.prevState = this.state;
 		
 		if (!_.isEqual(this.type, 'z') && !_.isEqual(this.type, 'r')) {
-		  Backbone.$('#log').prepend("<p>" + this.name + " ( " + (this.state ? "вкл.)</p>" : "выкл.)</p>"));
+		  Backbone.$('#log').prepend("<p>" + this.name + " ( " + (this.state ? "+)</p>" : "0)</p>"));
 		}
 	  }
 	  
